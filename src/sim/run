@@ -1,0 +1,5 @@
+#!/bin/bash
+make clean all
+./main > out.csv
+gnuplot plot.plt
+rm out.csv

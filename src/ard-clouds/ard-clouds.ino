@@ -2,7 +2,7 @@
 Title:    ARD-CLOUDS Simulator
 Authors:  Michael D. Petersen <railfan@drgw.net>
           Nathan D. Holmes <maverick@drgw.net>
-File:     main.cpp
+File:     ard-clouds.ino
 License:  GNU General Public License v3
 
 LICENSE:
@@ -19,7 +19,6 @@ LICENSE:
     GNU General Public License for more details.
 *************************************************************************/
 
-#include <stdio.h>
 #include "ard-clouds.h"
 
 #define GAIN1     6.0
@@ -29,21 +28,39 @@ LICENSE:
 #define TIME1     24
 #define TIME2     15
 
-int main(void)
-{
-	Cloud cloud1;
-	Cloud cloud2;
+volatile uint8_t ticks;
+volatile uint16_t decisecs = 0;
+
+Cloud cloud1;
+Cloud cloud2;
 	
+void setup()
+{
+	Serial.begin(115200);
+
 	cloud1.begin(1, GAIN1, OFFSET1, 2000, TIME1);
 	cloud2.begin(2, GAIN2, OFFSET2, 2000, TIME2);
+}
 
-	uint32_t t;
+void loop()
+{
+	static uint32_t t;
+	uint8_t pwm5, pwm6;
 
-	for(t=0; t<100000; t++)
-	{
-		printf("%f,%d,%d\n", (t*0.1)/60, (uint8_t)cloud1.update(), (uint8_t)cloud2.update());
-	}	
-	
-	return 0;
+	analogWrite(5, pwm5 = (uint8_t)cloud1.update());
+	analogWrite(6, pwm6 = (uint8_t)cloud2.update());
+
+	uint16_t secs = t / 600;
+	Serial.print(secs);
+	Serial.print('\'');
+	uint16_t decisecs = t % 600;
+	Serial.print(decisecs/10.0);
+	Serial.print(':');
+	Serial.print(pwm5);
+	Serial.print(',');
+	Serial.print(pwm6);
+	Serial.print('\n');
+	t++;
+	delay(100);
 }
 

@@ -30,7 +30,7 @@ TARGET = main
 LIBS = 
 CC = g++
 
-INCLUDES = -I.
+INCLUDES = -I. -I../ard-clouds
 CFLAGS = $(INCLUDES) -Wall
 
 .PHONY: default all clean
@@ -38,16 +38,16 @@ CFLAGS = $(INCLUDES) -Wall
 default: $(TARGET)
 all: default
 
-OBJECTS = $(patsubst %.cpp, %.o, $(wildcard *.cpp))
-HEADERS = $(wildcard *.h)
+SRCS = main.cpp lfsr.cpp
+INCS = lfsr.h ../ard-clouds/ard-clouds.h
 
-%.o: %.cpp $(HEADERS)
+OBJS = ${SRCS:.cpp=.o}
+
+%.o: %.cpp $(INCS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
-.PRECIOUS: $(TARGET) $(OBJECTS)
-
-$(TARGET): $(OBJECTS)
-	$(CC) $(OBJECTS) -Wall $(LIBS) -o $@
+$(TARGET): $(OBJS)
+	$(CC) $(OBJS) -Wall $(LIBS) -o $@
 
 clean:
 	-rm -f *.o
