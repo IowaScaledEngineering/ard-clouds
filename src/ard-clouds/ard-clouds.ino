@@ -21,8 +21,8 @@ LICENSE:
 
 #include "ard-clouds.h"
 
-#define GAIN1     6.0
-#define GAIN2     12.0
+#define GAIN1     15.0
+#define GAIN2     20.0
 #define OFFSET1   0.0
 #define OFFSET2   0.0
 #define TIME1     24
