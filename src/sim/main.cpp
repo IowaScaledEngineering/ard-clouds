@@ -29,6 +29,8 @@ LICENSE:
 #define TIME1     24
 #define TIME2     15
 
+#define max(a,b)  ((a)>(b)?(a):(b))
+
 int main(void)
 {
 	Cloud cloud1;
@@ -39,9 +41,17 @@ int main(void)
 
 	uint32_t t;
 
-	for(t=0; t<100000; t++)
+	uint32_t timeOffset = 256*(max(TIME1,TIME2));
+
+	for(t=0; t<timeOffset; t++)
 	{
-		printf("%f,%d,%d\n", (t*0.1)/60, (uint8_t)cloud1.update(), (uint8_t)cloud2.update());
+		cloud1.update();
+		cloud2.update();
+	}	
+
+	for(; t<100000; t++)
+	{
+		printf("%f,%d,%d\n", ((t-timeOffset)*0.1)/60, (uint8_t)cloud1.update(), (uint8_t)cloud2.update());
 	}	
 	
 	return 0;

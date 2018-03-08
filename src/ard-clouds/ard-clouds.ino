@@ -33,6 +33,8 @@ volatile uint16_t decisecs = 0;
 
 Cloud cloud1;
 Cloud cloud2;
+
+uint32_t timeOffset;
 	
 void setup()
 {
@@ -40,6 +42,8 @@ void setup()
 
 	cloud1.begin(1, GAIN1, OFFSET1, 2000, TIME1);
 	cloud2.begin(2, GAIN2, OFFSET2, 2000, TIME2);
+	
+	timeOffset = 256*(max(TIME1,TIME2));
 }
 
 void loop()
@@ -50,17 +54,21 @@ void loop()
 	analogWrite(5, pwm5 = (uint8_t)cloud1.update());
 	analogWrite(6, pwm6 = (uint8_t)cloud2.update());
 
-	uint16_t secs = t / 600;
-	Serial.print(secs);
-	Serial.print('\'');
-	uint16_t decisecs = t % 600;
-	Serial.print(decisecs/10.0);
-	Serial.print(':');
-	Serial.print(pwm5);
-	Serial.print(',');
-	Serial.print(pwm6);
-	Serial.print('\n');
+	if(t >= timeOffset)
+	{
+		uint32_t time = t - timeOffset;
+		uint16_t secs = time / 600;
+		Serial.print(secs);
+		Serial.print('\'');
+		uint16_t decisecs = time % 600;
+		Serial.print(decisecs/10.0);
+		Serial.print(':');
+		Serial.print(pwm5);
+		Serial.print(',');
+		Serial.print(pwm6);
+		Serial.print('\n');
+		delay(100);
+	}
 	t++;
-	delay(100);
 }
 
