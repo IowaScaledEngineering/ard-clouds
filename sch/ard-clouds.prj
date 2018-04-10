@@ -1,0 +1,6 @@
+schematics ard-clouds.sch
+output-name ../pcb/ard-clouds
+skip-m4
+elements-dir ../../../footprints
+
+
