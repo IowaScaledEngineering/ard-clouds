@@ -22,12 +22,19 @@ LICENSE:
 #include <stdio.h>
 #include "ard-clouds.h"
 
-#define GAIN1     15.0
-#define GAIN2     20.0
-#define OFFSET1   0.0
-#define OFFSET2   0.0
-#define TIME1     24
-#define TIME2     15
+#define GAIN1     10
+#define GAIN2     -60.0
+#define OFFSET1   -0.5
+#define OFFSET2   -0.2
+#define TIME1     20
+#define TIME2     5
+
+//#define GAIN1     15.0
+//#define GAIN2     20.0
+//#define OFFSET1   0.0
+//#define OFFSET2   0.0
+//#define TIME1     24
+//#define TIME2     15
 
 #define max(a,b)  ((a)>(b)?(a):(b))
 
