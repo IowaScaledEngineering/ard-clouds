@@ -1091,7 +1091,7 @@ Element["" "0805" "C3" "TBDuF" 575.00mil 1155.00mil -130.64mil -31.50mil 0 100 "
 
 	)
 
-Element["" "JUMPER3x2-SMT" "JP1" "unknown" 1470.00mil 890.00mil -35.00mil -220.00mil 0 100 ""]
+Element["" "JUMPER3x2-SMT" "JP1" "unknown" 1470.00mil 890.00mil -35.00mil -225.00mil 0 100 ""]
 (
 	Pad[39.96mil 100.00mil 134.84mil 100.00mil 50.00mil 20.00mil 56.00mil "1" "1" "square,edge2"]
 	Pad[39.96mil 0.0000 134.84mil 0.0000 50.00mil 20.00mil 56.00mil "3" "3" "square,edge2"]
@@ -1109,7 +1109,7 @@ Element["" "JUMPER3x2-SMT" "JP1" "unknown" 1470.00mil 890.00mil -35.00mil -220.0
 
 	)
 
-Element["" "JUMPER3x2-SMT" "JP2" "unknown" 1470.00mil 1270.00mil -40.00mil 160.00mil 0 100 ""]
+Element["" "JUMPER3x2-SMT" "JP2" "unknown" 1470.00mil 1270.00mil -40.00mil 165.00mil 0 100 ""]
 (
 	Pad[39.96mil 100.00mil 134.84mil 100.00mil 50.00mil 20.00mil 56.00mil "1" "1" "square,edge2"]
 	Pad[39.96mil 0.0000 134.84mil 0.0000 50.00mil 20.00mil 56.00mil "3" "3" "square,edge2"]
@@ -1275,7 +1275,7 @@ Layer(1 "component")
 	)
 	Polygon("clearpoly")
 	(
-		[25.00mil 1750.00mil] [540.00mil 1750.00mil] [540.00mil 1860.00mil] [25.00mil 1860.00mil] 
+		[25.00mil 1755.00mil] [540.00mil 1755.00mil] [540.00mil 1860.00mil] [25.00mil 1860.00mil] 
 	)
 	Polygon("clearpoly")
 	(
@@ -1287,7 +1287,7 @@ Layer(1 "component")
 	)
 	Polygon("clearpoly")
 	(
-		[25.00mil 1550.00mil] [370.00mil 1550.00mil] [370.00mil 1735.00mil] [25.00mil 1735.00mil] 
+		[25.00mil 1550.00mil] [370.00mil 1550.00mil] [370.00mil 1740.00mil] [25.00mil 1740.00mil] 
 	)
 	Polygon("clearpoly")
 	(
@@ -1365,6 +1365,10 @@ Layer(5 "silk")
 	Line[1145.00mil 1125.00mil 1110.00mil 1125.00mil 10.00mil 20.00mil "clearline"]
 	Line[1110.00mil 1125.00mil 1110.00mil 1415.00mil 10.00mil 20.00mil "clearline"]
 	Line[1110.00mil 1415.00mil 1145.00mil 1415.00mil 10.00mil 20.00mil "clearline"]
+	Line[305.00mil 2375.00mil 305.00mil 2415.00mil 10.00mil 20.00mil "clearline"]
+	Line[285.00mil 2395.00mil 325.00mil 2395.00mil 10.00mil 20.00mil "clearline"]
+	Line[1395.00mil 2375.00mil 1395.00mil 2415.00mil 10.00mil 20.00mil "clearline"]
+	Line[1375.00mil 2395.00mil 1415.00mil 2395.00mil 10.00mil 20.00mil "clearline"]
 	Text[1800.00mil 910.00mil 0 100 "AREF" "clearline"]
 	Text[1820.00mil 1010.00mil 0 100 "GND" "clearline"]
 	Text[1850.00mil 1610.00mil 0 100 "D8" "clearline"]
