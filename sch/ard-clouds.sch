@@ -159,7 +159,7 @@ slot=2
 T 58095 53700 5 10 1 1 0 6 1
 refdes=R2
 T 58300 53700 5 10 1 1 0 0 1
-value=TBD
+value=33k
 T 58200 53300 5 10 1 1 0 5 1
 footprint=RPACK2-0606
 }
@@ -172,7 +172,7 @@ refdes=C2
 T 58500 52900 5 10 0 0 270 2 1
 symversion=0.1
 T 59300 52500 5 10 1 1 0 2 1
-value=TBDuF
+value=22uF
 T 59400 53100 5 10 0 0 0 6 1
 footprint=0805
 T 59300 52800 5 10 1 1 0 0 1
@@ -306,7 +306,7 @@ slot=1
 T 58095 49200 5 10 1 1 0 6 1
 refdes=R2
 T 58300 49200 5 10 1 1 0 0 1
-value=TBD
+value=33k
 T 58200 48800 5 10 1 1 0 5 1
 footprint=RPACK2-0606
 }
@@ -321,7 +321,7 @@ footprint=0805
 T 59100 48300 5 10 1 1 0 6 1
 refdes=C3
 T 59300 48000 5 10 1 1 0 2 1
-value=TBDuF
+value=22uF
 T 59300 48300 5 10 1 1 0 0 1
 description=25V
 }
