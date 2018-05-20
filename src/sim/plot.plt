@@ -8,7 +8,7 @@ set grid xtics lt 0, lt 0
 set ylabel "Voltage"
 
 set yrange [-5:260]
-set xrange [0:30]
+set xrange [0:10]
 set xtics 5
 set xlabel "Time (min)"
 plot "out.csv" using 1:2 with lines, \
